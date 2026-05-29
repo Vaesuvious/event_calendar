@@ -1,0 +1,101 @@
+/*---- Settings Section ---*/
+body{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.settingsContainer {
+  position: absolute;
+  top: 6.2rem;
+  right: 13.4rem;
+  width: 770px;
+  height: 780px;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: var(--second-bg-color);
+  border: 1px solid var(--second-bg-color);
+  z-index: 1;
+}
+
+.settingsContainer::before {
+  content: "";
+  position: absolute;
+  top: -0.7rem;
+  right: 3.1rem;
+  width: 22px;
+  height: 22px;
+  background-color: var(--second-bg-color);
+  transform: rotate(45deg);
+  border-top: 1px solid var(--second-bg-color);
+  border-left: 1px solid var(--second-bg-color);
+}
+
+.settingsTitleDiv {
+  border-bottom: 3px solid var(--second-bg-color);
+  margin-left: 20px;
+  padding-bottom: 3px;
+  height: 9%;
+  display: flex;
+  align-items: center;
+}
+
+.bgDiv {
+  margin: 20px 0px 0px 0px;
+}
+
+.appearanceDiv {
+  border-left: 2px solid var(--first-bg-color);
+  border-right: 2px solid var(--first-bg-color);
+  margin: 3px;
+  padding: 0px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.appearanceDiv:hover {
+  background-color: var(--first-bg-color);
+}
+
+.backgroundDiv {
+  padding: 0px 0px 0px 25px;
+  /*margin-left:200px;*/
+}
+
+.backgroundTitleDiv {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+}
+
+.holidayDiv {
+  margin-top: 40px;
+}
+
+.decorativeDiv {
+  margin-top: 20px;
+}
+
+.classicDiv {
+  margin-top: 20px;
+}
+
+img {
+  margin-right: 5px;
+  width: 150px;
+  height: 110px;
+  border: 2px solid var(--first-bg-color);
+  border-radius: 8px;
+  transition:transform 0.6s;
+}
+img:hover {
+  transform: scale(1.04);
+  animation:changeBgAnim 0.5s ease;
+  opacity:0.7;
+}
+@keyframes changeBgAnim {
+  
+  0%{opacity:1;}
+
+}

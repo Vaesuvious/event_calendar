@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import NavBar from "./components/NavBar.jsx";
+import Ribbon from "./components/Ribbon.jsx";
+import Calendar from "./components/Calendar.jsx";
 
 function App() {
+  const [theme, setTheme] = useState("light");
+
+  const [isCalendarVisible, setCalendarVisible] = useState(false);
+  const toggleCalendar = () => {
+      setCalendarVisible(prev => !prev);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <nav className={`navContainer ${theme} shadow p-3 mb-5`}>
+        <NavBar theme={theme} setTheme={setTheme} onToggleCalendar={toggleCalendar}/>
+        
+      </nav>
+
+      <div className={`ribbonContainer ${theme}`}>
+        <Ribbon theme={theme} setTheme={setTheme} />
+      </div>
+
+      <div className={`calContainer ${theme}`}>
+        <Calendar theme={theme} setTheme={setTheme} isVisible={isCalendarVisible}/>
+      </div>
+    </>
   );
 }
 

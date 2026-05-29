@@ -1,0 +1,25 @@
+  /*---Ribbon Section---*/
+  .ribbonContainer{
+    background-color:var(--third-bg-color);
+    width:1690px;
+    height:55px;
+    margin:0px 0px 12px 40px;/*top,right,bottom,left*/
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    transition:0.5s;
+    transform: translateX(1.8%);
+  }
+  
+  .newEventBtn{
+    margin:8px 12px 8px 8px;
+  }
+  
+  .dayBtn,
+  .weekBtn,
+  .monthBtn,
+  .yearBtn{
+    margin:8px 12px 8px 8px;
+    color:var(--third-bg-color);
+  }
+  
