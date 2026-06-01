@@ -3,7 +3,7 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  /*font-family:;*/
+  
 }
 .calContainer{
     background-color:var(--third-bg-color);
@@ -14,51 +14,84 @@
     border-radius:8px;
   }
   
-  .calendarPane{
-    display:flex;
+  .icons{
+    justify-content: space-between;
+  }
+
+  .mini-calendar{
+  width:395px;
+  background-color:var(--third-bg-color);
+  border-radius:8px 8px 0px 0px;
+  color:black;
+}
+
+  .mini-calendar-header{
+    font-size: 25px;
+    font-weight: bold;
+    height:60px;
+    display:grid;
     align-items: center;
+  }
+
+  .mini-calendar-cell{
+    text-align:center;
+    padding: 0px 0px 0px 16px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: black;
+  }
+
+  .mini-calendar-grid{
+    display:grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
     padding:0 10px;
     justify-content:center;
-    min-height:78.33vh;
+    min-height:35.60vh;
     background-color:var(--third-bg-color);
-    border-radius:8px;
-    
+    border-radius:0px 0px 8px 8px;
   }
-  .calendarPane{
-    padding:20px;
-  }
-  .calendarPane ul{
+
+  
+  .mini-calendar-daysOfWeek{
     display:flex;
     flex-wrap:wrap;
-    list-style:none;
+    Justify-content: space-between;
     text-align:center;
+    padding: 5px 20px;
+    background-color:var(--third-bg-color);
+    border-radius: 8px 8px 0px 0px;
   }
-  .calendarPane .days{
-    margin-bottom:20px;
-  }
-  .calendarPane li{
+
+  .mini-calendar-daysOfWeek {
     color:black;
     width:calc(100% / 7);
     font-size:1.0rem;
   }
-  .calendarPane .weeks li{
+
+  .mini-calendar-daysOfWeek {
     font-weight:500;
     width:auto;
     cursor:default;
   }
-  .calendarPane .days li{
+
+  .mini-calendar-daysOfWeek .days{
     z-index:1;
     cursor:pointer;
     position:relative;
     margin-top:30px;
   }
- .wrapper{
-  width:400px;
-  background-color:var(--third-bg-color);
-  border-radius:8px;
 
-}
-.sideCalAnimOpen{
+  .continuationOfMiniCalendar{
+    width:395px;
+    background-color:var(--third-bg-color);
+    border-radius:0px 0px 8px 8px;
+    min-height:42.00vh;
+  }
+
+.miniCalAnimOpen{
   animation: openSideCalAnim 0.3s ease;
 }
 @keyframes openSideCalAnim {
@@ -67,16 +100,17 @@
     }
 
     100%{
-      width:400px;
+      width:399px;
       opacity: 0.843;
     }
   }
-.sideCalAnimClose{
+  
+.miniCalAnimClose{
   animation: closeSideCalAnim 0.3s ease;
 }
 @keyframes closeSideCalAnim {
     0%{
-       width:400px;
+       width:399px;
       opacity: 0.843;
     }
 
@@ -85,16 +119,19 @@
       opacity: 0;
     }
   }
+
 .wrapper header{
   display:flex;
   align-items:center;
   padding:25px 30px 10px;
   justify-content:space-between;
 }
-header .icons{
+
+.icons{
   display:flex;
 }
-header .icons i{
+
+.icons i{
   height:38px;
   width:38px;
   margin:0 1px;
@@ -106,20 +143,20 @@ header .icons i{
   user-select:none;
   border-radius:50%;
 }
-header .icons i:hover{
+.icons i:hover{
   background-color:var(--first-bg-color)
 }
-header .current-date{
+.current-date{
   font-size:1.45rem;
   font-weight:500;
 }
-.days li.inactive{
+.days .inactive{
   color:#aaa;
 }
-.days li.active{
+.days .active{
   color:#fff;
 }
-.days li::before{
+.days ::before{
   position:absolute;
   content:"";
   left:50%;
@@ -130,10 +167,10 @@ header .current-date{
   border-radius:50%;
   transform:translate(-50%,-50%);
 }
-.days li.active::before{
+.days .active::before{
   background:#d55a5a;
 }
-.days li:not(.active):hover::before{
+.days :not(.active):hover::before{
   background:#f2f2f2;
 }
   

@@ -45,7 +45,7 @@ const Calendar = ({setIsHidden, isVisible}) => {
   //Was within the <header> tag (<p class="current-date"> December 2025</p>)
   return (
     <>
-      <div class="mini-calendar sideCalAnimOpen" style={{display: isVisible ? 'block' : 'none'}} >
+      <div class="mini-calendar miniCalAnimOpen" style={{display: isVisible ? 'block' : 'none'}} >
         <div className="mini-calendar-header">
           <header>
             <div class="icons">
@@ -69,23 +69,26 @@ const Calendar = ({setIsHidden, isVisible}) => {
           </header>
         </div>
         
-
-        <div class="calendarPane ">
-          <ul className="mini-calendar-grid">
-            <li>Sun</li>
-            <li>Mon</li>
-            <li>Tue</li>
-            <li>Wed</li>
-            <li>Thu</li>
-            <li>Fri</li>
-            <li>Sat</li>
-          </ul>
+        <div className="mini-calendar-daysOfWeek">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        
+        <div class="mini-calendar-grid ">
+          
           {generateCalendarDays().map((day, index) => (
             <div key= {index} className="mini-calendar-cell">
               {day}
             </div>
           ))}
         </div>
+
+        <div className = "continuationOfMiniCalendar miniCalAnimOpen"></div>
       </div>
     </>
   );
